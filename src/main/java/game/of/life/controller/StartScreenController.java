@@ -1,5 +1,6 @@
 package game.of.life.controller;
 
+import game.of.life.App;
 import game.of.life.Controller;
 import game.of.life.Resource;
 import javafx.fxml.FXML;
@@ -8,15 +9,19 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 
 import javax.inject.Inject;
+import javax.inject.Provider;
 
 public class StartScreenController implements Controller {
 
+    private final App app;
+    private final Provider<LobbyScreenController> lobbyControllerProvider;
     @FXML
     public Button startButton;
 
     @Inject
-    public StartScreenController(){
-
+    public StartScreenController(App app, Provider<LobbyScreenController> lobbyControllerProvider){
+        this.app = app;
+        this.lobbyControllerProvider = lobbyControllerProvider;
     }
 
     @Override
@@ -47,6 +52,7 @@ public class StartScreenController implements Controller {
     }
 
     public void start() {
-
+        final LobbyScreenController lobbyController = lobbyControllerProvider.get();
+        app.show(lobbyController);
     }
 }
