@@ -1,17 +1,23 @@
 package game.of.life.controller;
 
+import game.of.life.App;
 import game.of.life.Controller;
 import game.of.life.Resource;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 import javax.inject.Inject;
+import javax.inject.Provider;
 
 public class LobbyScreenController implements Controller {
 
-    @Inject
-    public LobbyScreenController() {
+    private final App app;
+    private final Provider<RulesScreenController> rulesScreenControllerProvider;
 
+    @Inject
+    public LobbyScreenController(App app, Provider<RulesScreenController> rulesScreenControllerProvider) {
+        this.app = app;
+        this.rulesScreenControllerProvider = rulesScreenControllerProvider;
     }
 
     @Override
@@ -42,7 +48,8 @@ public class LobbyScreenController implements Controller {
     }
 
     public void rules() {
-
+        final RulesScreenController rulesScreenController = rulesScreenControllerProvider.get();
+        app.show(rulesScreenController);
     }
 
     public void create() {
