@@ -8,43 +8,43 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="game.of.life.controller.LobbyScreenController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.of.life.controller.LobbyScreenController">
     <padding>
-        <Insets left="20.0" right="20.0"/>
+        <Insets left="20.0" right="20.0" />
     </padding>
     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-        <Button mnemonicParsing="false" onAction="#rules" prefHeight="32.0" prefWidth="62.0"
-                text="Rules">
+        <Button mnemonicParsing="false" onAction="#rules" prefHeight="32.0" prefWidth="62.0" text="Rules">
             <font>
-                <Font size="15.0"/>
+                <Font size="15.0" />
             </font>
         </Button>
     </HBox>
     <HBox alignment="CENTER" prefHeight="43.0" prefWidth="600.0">
         <Label text="Choose the cells color">
             <font>
-                <Font size="24.0"/>
+                <Font size="24.0" />
             </font>
         </Label>
     </HBox>
     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
         <HBox alignment="CENTER" prefHeight="72.0" prefWidth="435.0" spacing="15.0">
-            <Circle fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fill="DODGERBLUE" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#03a410" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff3d1f" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#f6ff00" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#b81fff" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
         </HBox>
     </HBox>
     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-        <Button mnemonicParsing="false" onAction="#create" prefHeight="51.0"
-                prefWidth="121.0" text="CREATE LIFE">
+        <Button mnemonicParsing="false" onAction="#create" prefHeight="51.0" prefWidth="121.0" text="CREATE LIFE">
             <font>
-                <Font size="15.0"/>
+                <Font size="15.0" />
             </font>
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
         </Button>
+      <Circle fx:id="selectedColor" fill="#1f93ff00" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
     </HBox>
 </VBox>
