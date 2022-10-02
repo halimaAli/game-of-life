@@ -1,8 +1,9 @@
-package game.of.life.controller;
+package game.of.life.controller.inGame;
 
 import game.of.life.App;
 import game.of.life.Controller;
 import game.of.life.Resource;
+import game.of.life.controller.LobbyScreenController;
 import game.of.life.model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,11 @@ public class InGameScreenController implements Controller {
     @FXML
     public Pane gamePane;
     private Game game;
+
+    int rows = 15;
+    int columns = 30;
+    double width = 550;
+    double height = 260;
 
     @Inject
     public InGameScreenController(App app, Provider<LobbyScreenController> lobbyScreenControllerProvider){
@@ -45,6 +51,16 @@ public class InGameScreenController implements Controller {
         final Parent parent;
         try {
             parent = loader.load();
+            Grid grid = new Grid(columns, rows, width, height);
+
+            // fill grid
+            for (int row = 0; row < rows; row++) {
+                for (int column = 0; column < columns; column++) {
+                    Cell cell = new Cell(column, row);
+                    grid.add(cell, column, row);
+                }
+            }
+            gamePane.getChildren().add(grid);
 
         } catch (Exception e) {
             e.printStackTrace();

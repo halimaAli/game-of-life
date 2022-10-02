@@ -3,6 +3,7 @@ package game.of.life.controller;
 import game.of.life.App;
 import game.of.life.Controller;
 import game.of.life.Resource;
+import game.of.life.controller.inGame.InGameScreenController;
 import game.of.life.model.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
