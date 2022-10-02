@@ -5,10 +5,14 @@ import game.of.life.Controller;
 import game.of.life.Resource;
 import game.of.life.controller.LobbyScreenController;
 import game.of.life.model.Game;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -20,8 +24,11 @@ public class InGameScreenController implements Controller {
 
     @FXML
     public Pane gamePane;
+    @FXML
+    public Button start_pause_button;
     private Game game;
     private Grid grid;
+    private Timeline timeline;
 
     int rows = 15;
     int columns = 30;
@@ -63,6 +70,10 @@ public class InGameScreenController implements Controller {
             }
             gamePane.getChildren().add(grid);
 
+            timeline = new Timeline(new KeyFrame(Duration.ZERO, event -> grid.startLifeCycle()), new KeyFrame(Duration.millis(100)));
+
+            timeline.setCycleCount(Timeline.INDEFINITE);
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -85,6 +96,15 @@ public class InGameScreenController implements Controller {
     }
 
     public void start() {
+        if (start_pause_button.getText().equals("START")) {
+            gamePane.setDisable(true);
+            start_pause_button.setText("PAUSE");
+            timeline.play();
+        } else {
+            gamePane.setDisable(false);
+            start_pause_button.setText("START");
+            timeline.stop();
+        }
 
     }
 }
