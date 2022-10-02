@@ -17,14 +17,16 @@ public class LobbyScreenController implements Controller {
 
     private final App app;
     private final Provider<RulesScreenController> rulesScreenControllerProvider;
+    private final Provider<InGameScreenController> inGameScreenControllerProvider;
     @FXML
     public Circle selectedColor;
     private Game game;
 
     @Inject
-    public LobbyScreenController(App app, Provider<RulesScreenController> rulesScreenControllerProvider) {
+    public LobbyScreenController(App app, Provider<RulesScreenController> rulesScreenControllerProvider, Provider<InGameScreenController> inGameScreenControllerProvider) {
         this.app = app;
         this.rulesScreenControllerProvider = rulesScreenControllerProvider;
+        this.inGameScreenControllerProvider = inGameScreenControllerProvider;
     }
 
     @Override
@@ -60,7 +62,12 @@ public class LobbyScreenController implements Controller {
     }
 
     public void create() {
-
+        final InGameScreenController inGameScreenController = inGameScreenControllerProvider.get();
+        if (game == null) {
+            game = new Game(selectedColor.getFill());
+        }
+        inGameScreenController.setGame(game);
+        app.show(inGameScreenController);
     }
 
     public void colorSelect(MouseEvent mouseEvent) {
@@ -72,7 +79,7 @@ public class LobbyScreenController implements Controller {
         selectedColor.setFill(color.getFill());
     }
 
-    public Game getGame(){
+    public Game getGame() {
         return game;
     }
 }
