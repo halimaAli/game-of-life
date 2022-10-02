@@ -24,13 +24,18 @@ public class Cell extends Pane {
             setStyle("-fx-background-color: " + color);
             filled = true;
         } else {
-            setStyle("-fx-background-color: white");
-            filled = false;
+            clear();
         }
-
     }
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public void clear(){
+        if (filled) {
+            setStyle("-fx-background-color: white");
+            filled = false;
+        }
     }
 }
