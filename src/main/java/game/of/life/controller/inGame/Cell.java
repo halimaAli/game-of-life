@@ -5,10 +5,11 @@ import javafx.scene.layout.Pane;
 
 public class Cell extends Pane {
 
-    private final int column;
-    private final int row;
+    public final int column;
+    public final int row;
     private boolean filled = false;
     private String color;
+    private Grid grid;
 
     public Cell(int column, int row) {
         this.column = column;
@@ -21,8 +22,7 @@ public class Cell extends Pane {
 
     public void clickCell(MouseEvent mouseEvent) {
         if (!filled) {
-            setStyle("-fx-background-color: " + color);
-            filled = true;
+            create();
         } else {
             clear();
         }
@@ -35,7 +35,30 @@ public class Cell extends Pane {
     public void clear(){
         if (filled) {
             setStyle("-fx-background-color: white");
+            grid.removeFromFilled(this);
             filled = false;
+        }
+    }
+
+    public void create() {
+        setStyle("-fx-background-color: " + color);
+        grid.addToFilled(this);
+        filled = true;
+    }
+
+    public void setGrid(Grid grid) {
+        this.grid = grid;
+    }
+
+    public void check(int neighbors){
+        if (filled) {
+            if (neighbors < 2 || neighbors > 3){
+                clear();
+            }
+        } else {
+            if (neighbors == 3) {
+                create();
+            }
         }
     }
 }
