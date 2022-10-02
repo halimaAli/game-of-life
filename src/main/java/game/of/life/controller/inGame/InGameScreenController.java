@@ -51,9 +51,8 @@ public class InGameScreenController implements Controller {
         final Parent parent;
         try {
             parent = loader.load();
-            Grid grid = new Grid(columns, rows, width, height);
+            Grid grid = new Grid(columns, rows, width, height, game);
 
-            // fill grid
             for (int row = 0; row < rows; row++) {
                 for (int column = 0; column < columns; column++) {
                     Cell cell = new Cell(column, row);

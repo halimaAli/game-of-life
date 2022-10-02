@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class App extends Application {
     private final Controller initController;
     private Stage stage;
@@ -29,6 +31,8 @@ public class App extends Application {
 
         final Scene scene = new Scene(new Label("loading"));
         stage.setScene(scene);
+
+        scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource("views/styles.css")).toString());
 
         primaryStage.show();
 

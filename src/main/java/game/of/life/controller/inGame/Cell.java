@@ -5,21 +5,32 @@ import javafx.scene.layout.Pane;
 
 public class Cell extends Pane {
 
-    int column;
-    int row;
+    private final int column;
+    private final int row;
+    private boolean filled = false;
+    private String color;
 
     public Cell(int column, int row) {
-
         this.column = column;
         this.row = row;
 
-        setStyle("-fx-border-color: black");
+        getStyleClass().add("cell");
         setOpacity(0.9);
         setEventHandler(MouseEvent.MOUSE_CLICKED, this::clickCell);
     }
 
     public void clickCell(MouseEvent mouseEvent) {
-        setStyle("-fx-background-color: black");
+        if (!filled) {
+            setStyle("-fx-background-color: " + color);
+            filled = true;
+        } else {
+            setStyle("-fx-background-color: white");
+            filled = false;
+        }
+
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
