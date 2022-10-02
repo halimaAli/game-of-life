@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="game.of.life.controller.StartScreenController">
+    <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+        <Label text="Conway's">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="95.0" prefWidth="600.0">
+        <VBox.margin>
+            <Insets bottom="50.0"/>
+        </VBox.margin>
+        <Label text="Game Of Life">
+            <font>
+                <Font size="41.0"/>
+            </font>
+        </Label>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+        <Button fx:id="startButton" mnemonicParsing="false" onAction="#start" prefHeight="50.0"
+                prefWidth="119.0" text="START">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Button>
+    </HBox>
+</VBox>

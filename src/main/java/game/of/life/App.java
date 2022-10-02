@@ -23,9 +23,8 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.stage = primaryStage;
-        stage.setMinWidth(1600);
-        stage.setMinHeight(900);
-        stage.setMaximized(true);
+        stage.setMinWidth(800);
+        stage.setMinHeight(500);
         stage.setTitle("Game Of Life");
 
         final Scene scene = new Scene(new Label("loading"));
