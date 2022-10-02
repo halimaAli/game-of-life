@@ -44,10 +44,6 @@ javafx {
     modules = ['javafx.controls', 'javafx.graphics', 'javafx.fxml', 'javafx.media', 'javafx.swing']
 }
 
-jacoco {
-    toolVersion = '0.8.8'
-}
-
 test {
     useJUnitPlatform()
 }

@@ -1,4 +1,4 @@
-package org.example;
+package game.of.life;
 
 public class Main {
     public static void main(String[] args) {
