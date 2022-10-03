@@ -20,6 +20,10 @@
     -fx-font-size: 43px;
 }
 
+.rulesText {
+    -fx-font-size: 17px;
+}
+
 .button {
     -fx-font-size: 30px;
     -fx-background-color: white;
@@ -30,6 +34,13 @@
 .button:hover {
     -fx-text-fill: white;
     -fx-background-color: black;
+}
+
+.background {
+    -fx-background-image: url("../images/GOL_Background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1000 700;
+    -fx-background-position: center center;
 }
 
 /*-----Start-----*/
@@ -46,9 +57,14 @@
     -fx-background-radius: 50px;
 }
 
-.background {
-    -fx-background-image: url("../images/GOL_Background.png");
-    -fx-background-repeat: stretch;
-    -fx-background-size: 1000 700;
-    -fx-background-position: center center;
+/*-----Rules-----*/
+.back {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-font-size: 20px;
+}
+
+.back:hover {
+    -fx-text-fill: black;
+    -fx-background-color: white;
 }
