@@ -3,9 +3,16 @@
     -fx-font-size: 12px;
 }
 
-.cell {
-    -fx-border-color: grey;
-    -fx-border-width: 1px;
+.button {
+    -fx-font-size: 30px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+.button:hover {
+    -fx-text-fill: white;
+    -fx-background-color: black;
 }
 
 .bigText {
@@ -22,18 +29,6 @@
 
 .rulesText {
     -fx-font-size: 17px;
-}
-
-.button {
-    -fx-font-size: 30px;
-    -fx-background-color: white;
-    -fx-border-color: black;
-    -fx-border-width: 2px;
-}
-
-.button:hover {
-    -fx-text-fill: white;
-    -fx-background-color: black;
 }
 
 .background {
@@ -58,6 +53,15 @@
 }
 
 /*-----Rules-----*/
+.cell {
+    -fx-border-color: grey;
+    -fx-border-width: 1px;
+}
+
+.cell:hover {
+    -fx-border-color: black
+}
+
 .back {
     -fx-text-fill: white;
     -fx-background-color: black;

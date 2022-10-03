@@ -11,7 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import javax.inject.Inject;
@@ -23,17 +23,17 @@ public class InGameScreenController implements Controller {
     private final Provider<LobbyScreenController> lobbyScreenControllerProvider;
 
     @FXML
-    public Pane gamePane;
+    public VBox gridSpace;
     @FXML
     public Button start_pause_button;
     private Game game;
     private Grid grid;
     private Timeline timeline;
 
-    int rows = 25;
+    int rows = 30;
     int columns = 50;
-    double width = 580;
-    double height = 340;
+    double width = 980;
+    double height = 610;
 
 
     @Inject
@@ -68,7 +68,7 @@ public class InGameScreenController implements Controller {
                     grid.add(cell, column, row);
                 }
             }
-            gamePane.getChildren().add(grid);
+            gridSpace.getChildren().add(grid);
 
             timeline = new Timeline(new KeyFrame(Duration.ZERO, event -> grid.startLifeCycle()), new KeyFrame(Duration.millis(100)));
 
@@ -88,7 +88,7 @@ public class InGameScreenController implements Controller {
 
     public void reset() {
         grid.reset();
-        gamePane.setDisable(false);
+        gridSpace.setDisable(false);
         start_pause_button.setText("START");
         timeline.stop();
     }
@@ -100,11 +100,11 @@ public class InGameScreenController implements Controller {
 
     public void start() {
         if (start_pause_button.getText().equals("START")) {
-            gamePane.setDisable(true);
+            gridSpace.setDisable(true);
             start_pause_button.setText("PAUSE");
             timeline.play();
         } else {
-            gamePane.setDisable(false);
+            gridSpace.setDisable(false);
             start_pause_button.setText("START");
             timeline.stop();
         }
