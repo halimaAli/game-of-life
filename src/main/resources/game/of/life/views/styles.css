@@ -40,7 +40,7 @@
 
 /*-----Start-----*/
 .start-background {
-    -fx-background-image: url("../images/background_GOL.png");
+    -fx-background-image: url("../images/background_Start.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 1000 700;
     -fx-background-position: center center;
