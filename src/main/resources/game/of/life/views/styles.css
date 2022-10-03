@@ -1,3 +1,8 @@
+.root {
+    -fx-font-family: "Fira Code";
+    -fx-font-size: 12px;
+}
+
 .cell {
     -fx-border-color: grey;
     -fx-border-width: 1px;
@@ -8,4 +13,28 @@
     -fx-background-repeat: stretch;
     -fx-background-size: 1000 700;
     -fx-background-position: center center;
+}
+
+.bigText {
+    -fx-font-size: 70px;
+}
+
+.smallText {
+    -fx-font-size: 27px;
+}
+
+.mediumText {
+    -fx-font-size: 43px;
+}
+
+.button {
+    -fx-font-size: 30px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+.button:hover {
+    -fx-text-fill: white;
+    -fx-background-color: black;
 }

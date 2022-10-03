@@ -3,6 +3,7 @@ package game.of.life;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -26,13 +27,14 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         this.stage = primaryStage;
         stage.setMinWidth(1000);
-        stage.setMinHeight(700);
+        stage.setMinHeight(730);
         stage.setTitle("Game Of Life");
 
         final Scene scene = new Scene(new Label("loading"));
         stage.setScene(scene);
 
         scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource("views/styles.css")).toString());
+        Font.loadFont(Main.class.getResourceAsStream("fonts/FiraCode-Regular.ttf"),12);
 
         primaryStage.show();
 

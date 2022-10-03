@@ -11,7 +11,7 @@
       prefHeight="400.0" prefWidth="600.0" styleClass="start-background" xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.of.life.controller.StartScreenController">
     <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
-        <Label text="Conway's">
+        <Label styleClass="smallText" text="Conway's">
             <font>
                 <Font size="20.0"/>
             </font>
@@ -21,17 +21,17 @@
         <VBox.margin>
             <Insets bottom="50.0"/>
         </VBox.margin>
-        <Label text="Game Of Life">
+        <Label styleClass="bigText" text="Game Of Life">
             <font>
                 <Font size="41.0"/>
             </font>
         </Label>
     </HBox>
     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-        <Button fx:id="startButton" mnemonicParsing="false" onAction="#start" prefHeight="50.0" prefWidth="119.0"
+        <Button fx:id="startButton" mnemonicParsing="false" onAction="#start" prefHeight="65.0" prefWidth="158.0"
                 text="START">
             <font>
-                <Font size="16.0"/>
+                <Font size="30.0"/>
             </font>
         </Button>
     </HBox>
