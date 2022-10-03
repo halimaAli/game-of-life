@@ -30,14 +30,14 @@ public class InGameScreenController implements Controller {
     private Grid grid;
     private Timeline timeline;
 
-    int rows = 15;
-    int columns = 30;
-    double width = 550;
-    double height = 260;
+    int rows = 25;
+    int columns = 50;
+    double width = 580;
+    double height = 340;
 
 
     @Inject
-    public InGameScreenController(App app, Provider<LobbyScreenController> lobbyScreenControllerProvider){
+    public InGameScreenController(App app, Provider<LobbyScreenController> lobbyScreenControllerProvider) {
         this.app = app;
         this.lobbyScreenControllerProvider = lobbyScreenControllerProvider;
     }
@@ -105,6 +105,5 @@ public class InGameScreenController implements Controller {
             start_pause_button.setText("START");
             timeline.stop();
         }
-
     }
 }

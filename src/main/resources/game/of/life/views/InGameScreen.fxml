@@ -7,27 +7,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="game.of.life.controller.inGame.InGameScreenController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.of.life.controller.inGame.InGameScreenController">
     <padding>
-        <Insets left="10.0" right="10.0"/>
+        <Insets left="10.0" right="10.0" />
     </padding>
-    <HBox alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="600.0">
-        <Button mnemonicParsing="false" onAction="#reset" text="Reset"/>
-        <Pane prefHeight="58.0" prefWidth="198.0"/>
-        <Button mnemonicParsing="false" onAction="#leave" prefHeight="30.0" prefWidth="69.0" text="LEAVE">
-            <font>
-                <Font size="14.0"/>
-            </font>
-        </Button>
-    </HBox>
-    <Pane fx:id="gamePane" prefHeight="278.0" prefWidth="580.0"/>
-    <HBox alignment="CENTER" prefHeight="55.0" prefWidth="580.0">
+    <Pane fx:id="gamePane" prefHeight="340.0" prefWidth="580.0" />
+    <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="580.0" spacing="10.0">
         <Button fx:id="start_pause_button" mnemonicParsing="false" onAction="#start" prefHeight="43.0" prefWidth="86.0" text="START">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#reset" text="Reset" />
+      <Pane prefHeight="55.0" prefWidth="130.0" />
+        <Button mnemonicParsing="false" onAction="#leave" prefHeight="25.0" prefWidth="60.0" text="LEAVE">
+            <font>
+                <Font size="14.0" />
             </font>
         </Button>
     </HBox>
