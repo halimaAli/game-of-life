@@ -41,9 +41,20 @@ dependencies {
 
 javafx {
     version = '17'
-    modules = ['javafx.controls', 'javafx.graphics', 'javafx.fxml', 'javafx.media', 'javafx.swing']
+    modules = ['javafx.controls', 'javafx.graphics', 'javafx.fxml']
 }
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes "Main-Class": "game.of.life.Main"
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
