@@ -88,6 +88,9 @@ public class InGameScreenController implements Controller {
 
     public void reset() {
         grid.reset();
+        gamePane.setDisable(false);
+        start_pause_button.setText("START");
+        timeline.stop();
     }
 
     public void leave() {
