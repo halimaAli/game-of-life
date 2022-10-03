@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="game.of.life.controller.StartScreenController">
+      prefHeight="400.0" prefWidth="600.0" styleClass="start-background" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.of.life.controller.StartScreenController">
     <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
         <Label text="Conway's">
             <font>
@@ -29,8 +28,8 @@
         </Label>
     </HBox>
     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-        <Button fx:id="startButton" mnemonicParsing="false" onAction="#start" prefHeight="50.0"
-                prefWidth="119.0" text="START">
+        <Button fx:id="startButton" mnemonicParsing="false" onAction="#start" prefHeight="50.0" prefWidth="119.0"
+                text="START">
             <font>
                 <Font size="16.0"/>
             </font>
