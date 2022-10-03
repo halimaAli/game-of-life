@@ -5,48 +5,73 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="game.of.life.controller.LobbyScreenController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="730.0" prefWidth="1000.0" styleClass="background" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.of.life.controller.LobbyScreenController">
     <padding>
         <Insets left="20.0" right="20.0"/>
     </padding>
     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-        <Button mnemonicParsing="false" onAction="#rules" prefHeight="32.0" prefWidth="62.0" text="Rules">
+        <Button mnemonicParsing="false" onAction="#rules" prefHeight="32.0" prefWidth="62.0" styleClass="rulesButton"
+                text="?">
             <font>
-                <Font size="15.0"/>
+                <Font size="33.0"/>
             </font>
         </Button>
+        <VBox.margin>
+            <Insets bottom="20.0"/>
+        </VBox.margin>
     </HBox>
     <HBox alignment="CENTER" prefHeight="43.0" prefWidth="600.0">
-        <Label text="Choose the cells color">
+        <Label styleClass="mediumText" text="Choose the cells color">
             <font>
-                <Font size="24.0"/>
+                <Font size="44.0"/>
             </font>
         </Label>
+        <VBox.margin>
+            <Insets bottom="80.0"/>
+        </VBox.margin>
     </HBox>
     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-        <HBox alignment="CENTER" prefHeight="72.0" prefWidth="435.0" spacing="15.0">
-            <Circle fill="DODGERBLUE" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="#03a410" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="#ff3d1f" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="#f6ff00" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle fill="#b81fff" onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Circle onMouseClicked="#colorSelect" radius="25.0" stroke="BLACK" strokeType="INSIDE"/>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="675.0" spacing="35.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" onMouseClicked="#colorSelect"
+                       stroke="BLACK" strokeType="INSIDE" width="75.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e900f" height="75.0" onMouseClicked="#colorSelect"
+                       stroke="BLACK" strokeType="INSIDE" width="75.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="75.0" onMouseClicked="#colorSelect"
+                       stroke="BLACK" strokeType="INSIDE" width="75.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcff36" height="75.0" onMouseClicked="#colorSelect"
+                       stroke="BLACK" strokeType="INSIDE" width="75.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8517c9" height="75.0" onMouseClicked="#colorSelect"
+                       stroke="BLACK" strokeType="INSIDE" width="75.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="75.0" onMouseClicked="#colorSelect" stroke="BLACK"
+                       strokeType="INSIDE" width="75.0"/>
         </HBox>
+        <VBox.margin>
+            <Insets bottom="100.0"/>
+        </VBox.margin>
     </HBox>
-    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-        <Button mnemonicParsing="false" onAction="#create" prefHeight="51.0" prefWidth="121.0" text="CREATE LIFE">
+    <HBox alignment="CENTER" prefHeight="118.0" prefWidth="960.0">
+        <Button mnemonicParsing="false" onAction="#create" prefHeight="65.0" prefWidth="264.0" text="CREATE LIFE">
             <font>
-                <Font size="15.0"/>
+                <Font size="30.0"/>
             </font>
             <HBox.margin>
                 <Insets right="20.0"/>
             </HBox.margin>
         </Button>
-        <Circle fx:id="selectedColor" radius="24.0" stroke="BLACK" strokeType="INSIDE"/>
+        <VBox alignment="CENTER" prefHeight="118.0" prefWidth="199.0">
+            <HBox alignment="CENTER" prefHeight="78.0" prefWidth="141.0" spacing="34.0">
+                <Rectangle fx:id="selectedColor1" arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="BLACK"
+                           strokeType="INSIDE" width="40.0"/>
+                <Rectangle fx:id="selectedColor2" arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="BLACK"
+                           strokeType="INSIDE" width="40.0"/>
+            </HBox>
+            <Rectangle fx:id="selectedColor3" arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="BLACK"
+                       strokeType="INSIDE" width="40.0"/>
+        </VBox>
     </HBox>
 </VBox>

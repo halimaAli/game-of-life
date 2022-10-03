@@ -8,13 +8,6 @@
     -fx-border-width: 1px;
 }
 
-.start-background {
-    -fx-background-image: url("../images/background_GOL.png");
-    -fx-background-repeat: stretch;
-    -fx-background-size: 1000 700;
-    -fx-background-position: center center;
-}
-
 .bigText {
     -fx-font-size: 70px;
 }
@@ -37,4 +30,25 @@
 .button:hover {
     -fx-text-fill: white;
     -fx-background-color: black;
+}
+
+/*-----Start-----*/
+.start-background {
+    -fx-background-image: url("../images/background_GOL.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1000 700;
+    -fx-background-position: center center;
+}
+
+/*-----Lobby-----*/
+.rulesButton {
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}
+
+.background {
+    -fx-background-image: url("../images/GOL_Background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1000 700;
+    -fx-background-position: center center;
 }

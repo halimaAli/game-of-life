@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -20,7 +20,11 @@ public class LobbyScreenController implements Controller {
     private final Provider<RulesScreenController> rulesScreenControllerProvider;
     private final Provider<InGameScreenController> inGameScreenControllerProvider;
     @FXML
-    public Circle selectedColor;
+    public Rectangle selectedColor1;
+    @FXML
+    public Rectangle selectedColor2;
+    @FXML
+    public Rectangle selectedColor3;
     private Game game;
 
     @Inject
@@ -65,19 +69,21 @@ public class LobbyScreenController implements Controller {
     public void create() {
         final InGameScreenController inGameScreenController = inGameScreenControllerProvider.get();
         if (game == null) {
-            game = new Game(selectedColor.getFill());
+            game = new Game(selectedColor1.getFill());
         }
         inGameScreenController.setGame(game);
         app.show(inGameScreenController);
     }
 
     public void colorSelect(MouseEvent mouseEvent) {
-        final Circle color = (Circle) mouseEvent.getSource();
-        if (selectedColor.getFill().equals(color.getFill())) {
+        final Rectangle color = (Rectangle) mouseEvent.getSource();
+        if (selectedColor1.getFill().equals(color.getFill())) {
             return;
         }
         game = new Game(color.getFill());
-        selectedColor.setFill(color.getFill());
+        selectedColor1.setFill(color.getFill());
+        selectedColor2.setFill(color.getFill());
+        selectedColor3.setFill(color.getFill());
     }
 
     public Game getGame() {
